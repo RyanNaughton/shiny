@@ -1,6 +1,6 @@
 library(shiny)
 
-load("teacher_labor_market/data/sampled_data.rdata")
+load("C:/Users/Juliana/Documents/IDB/Teacher Labor Market/shiny/teacher_labor_market/data/sampled_data.rdata")
 data <- data_sample
 
 # Define server logic required to plot various variables against mpg
