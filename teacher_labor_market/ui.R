@@ -1,9 +1,10 @@
 library(shiny)
 
-variables <- list("Sex" = "sex", 
-                  "Employment Status" = "empstat", 
-                  "Industry" = "indgen", 
-                  "Year" = "year")
+variables <- list("Sex" = "sex",
+                  "Year" = "year",
+                  "Industry" = "indgen",
+                  "Employment Status" = "empstat")
+
 # Define UI for miles per gallon application
 shinyUI(pageWithSidebar(
   
@@ -14,12 +15,12 @@ shinyUI(pageWithSidebar(
   # and to specify whether outliers should be included
   sidebarPanel(
     
-    selectInput("variable_1", "Variable 1:",variables),
-    selectInput("variable_2", "Variable 2:",variables)
-    )
+    selectInput("variable_1", "Variable 1:", variables),
+    selectInput("variable_2", "Variable 2:", variables)
     
-    #checkboxInput("outliers", "Show outliers", FALSE)
   ),
   
-  mainPanel()
+  mainPanel(
+    h3(textOutput("caption"))
+    )
 ))
