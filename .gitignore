@@ -1,5 +1,8 @@
 # History files
 .Rhistory
 
+*.swp
+
 # Example code in package build process
 *-Ex.R
+.Rproj.user
