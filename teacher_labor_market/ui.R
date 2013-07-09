@@ -21,6 +21,7 @@ shinyUI(pageWithSidebar(
   ),
   
   mainPanel(
-    h3(textOutput("caption"))
+    h3(textOutput("caption")),
+    plotOutput("crossTab")
     )
 ))
