@@ -26,7 +26,8 @@ shinyServer(function(input, output) {
        x/sum(x)
       })
     }
-    barplot(tmp)
+    barplot(tmp,col=as.factor(rownames(tmp)))
+    legend('topleft',legend=as.factor(rownames(tmp)),fill=as.factor(rownames(tmp)))
   })
     
 })
