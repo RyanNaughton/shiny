@@ -19,12 +19,13 @@ shinyServer(function(input, output) {
   
   output$crossTab <- renderPlot({
     tmp <- table(data[,input$variable_1],data[,input$variable_2])
-    #tmp <- as.matrix(tmp)
+    if(input$as_percent){
+      tmp <- as.matrix(tmp)
+      tmp <- apply(X=tmp,2,FUN=function(x){
+       x/sum(x)
+      })
+    }
     barplot(tmp)
-    #tmp2 <- apply(X=tmp,2,FUN=function(x){
-    #  x/sum(x)
-    #})
-    #barplot(tmp2,main=paste(selected_one,"~",selected_two))
   })
     
 })

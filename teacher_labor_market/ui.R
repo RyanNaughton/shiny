@@ -16,7 +16,8 @@ shinyUI(pageWithSidebar(
   sidebarPanel(
     
     selectInput("variable_1", "Variable 1:", variables),
-    selectInput("variable_2", "Variable 2:", variables)
+    selectInput("variable_2", "Variable 2:", variables),
+    checkboxInput("as_percent", "As Percentage?", FALSE)
     
   ),
   
