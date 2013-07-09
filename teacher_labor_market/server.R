@@ -1,8 +1,8 @@
 library(shiny)
 
-
-load(paste0(getwd(),"/data/sampled_data.rdata"))
-data <- data_sample
+tmpenv <- new.env()
+load(paste0("data/sampled_data.rdata"), envir=tmpenv)
+data <- tmpenv$data_sample
 
 # Define server logic required to plot various variables against mpg
 shinyServer(function(input, output) {
